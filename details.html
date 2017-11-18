@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset=UTF-8/>
+    <title>蜂购全球-乐蜂网</title>
+    <meta name="keywords" content="乐蜂网,乐蜂,化妆品网站,商品特卖,特卖网,特卖">
+    <script src="js/jquery-1.11.1.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/public.css">
+    <link rel="stylesheet" type="text/css" href="css/details.css">
+    <script type="text/javascript" src="js/public.js"></script>
+    <script type="text/javascript" src="js/details.js"></script>
+</head>
+<body>
+<div class="Chead">
+    <div class="Chead-info">
+        <div class="Chead-info-box">
+            <!-- 手机乐蜂 --> <a class="Chead-app" href="javascript:;">手机乐蜂</a>
+            <div class="Chead-appDown" style="display:none;">
+                <div>
+                    <img src="images/xz_icon_for_lf.jpg" height="112" width="112" />
+                    <h6>
+                        <b class="i1"></b><b class="i2"></b>客户端
+                    </h6>
+                </div>
+                <span class="fast-nav turl"><a class="Chead-app" href="javascript:;">手机乐蜂</a></span>
+            </div>
+            <!-- 收藏乐蜂 --> <span class="Chead-save" id="Chead-save">收藏乐蜂</span> <!-- 快速导航 --> <span class="fast-nav turl" id="Chead_fastnav">快速导航<i></i></span>
+            <div class="Chead-floatmenu" style="display:none;">
+                <div id="floatmenucon">
+                    <a href="details.html">帮助中心</a> <a href="details.html">联系客服</a> <a href="details.html">商务合作</a>
+                    <h6>
+                        <img src="images/wx_icon_for_lf.jpg" height="112" width="112" /> <b>惊喜码上来</b>
+                    </h6>
+                </div>
+                <span class="fast-nav turl" style="color:#666666;">快速导航<i></i></span>
+            </div>
+            <!-- 我的订单--> <a class="turl Chead_myh" href="details.html" id="Chead_myh">我的订单<i></i></a>
+            <div class="Chead-myhome" style="display:none;">
+                <a class="turl" href="details.html">我的订单<i></i></a> <a href="details.html">我的钱包</a> <a href="details.html">我的礼券</a>
+            </div>
+            <span class="Chead-welcome">欢迎来到乐蜂，请&nbsp;<a href="details.html">登录</a>&nbsp; | &nbsp;<a href="details.html">免费注册</a></span> 送货到<a href="details.html" class="areaSellBtn" mars_sead="lpc_top_diqu"><i class="up"></i>北京</a>
+            <div class="areaSell">
+                <ul>
+                <li>
+                    <a href="#" pid="104103" warehouse="VIP_HZ">     湖南</a> 
+                </li>
+                <li>
+                    <a href="#" pid="104102" warehouse="VIP_HZ">     湖北</a> 
+                </li>
+                <li>
+                    <a href="#" pid="104101" warehouse="VIP_HZ">     河南</a> 
+                </li>
+                <li>
+                    <a href="#" pid="103106" warehouse="VIP_HZ">     江西</a> 
+                </li>
+                <li>
+                    <a href="#" pid="106101" warehouse="VIP_HZ">     陕西</a> 
+                </li>
+                <li>
+                    <a href="#" pid="105101" warehouse="VIP_CD">     四川</a> 
+                </li>
+                <li>
+                    <a href="#" pid="105102" warehouse="VIP_CD">     贵州</a> 
+                </li>
+                <li>
+                    <a href="#" pid="105103" warehouse="VIP_CD">     云南</a> 
+                </li>
+                <li>
+                    <a href="#" pid="105100" warehouse="VIP_CD">     重庆</a> 
+                </li>
+                <li>
+                    <a href="#" pid="105104" warehouse="VIP_CD">     西藏</a> 
+                </li>
+                <li>
+                    <a href="#" pid="104104" warehouse="VIP_NH">     广东</a> 
+                </li>
+                <li>
+                    <a href="#" pid="104105" warehouse="VIP_NH">     广西</a> 
+                </li>
+                <li>
+                    <a href="#" pid="104106" warehouse="VIP_NH">     海南</a> 
+                </li>
+                <li>
+                    <a href="#" pid="101101" warehouse="VIP_BJ">     北京</a> 
+                </li>
+                <li>
+                    <a href="#" pid="101103" warehouse="VIP_BJ">     河北</a> 
+                </li>
+                <li>
+                    <a href="#" pid="101105" warehouse="VIP_BJ">     内蒙古</a>
+                 </li>
+                <li>
+                    <a href="#" pid="101104" warehouse="VIP_BJ">     山西</a> 
+                </li>
+                <li>
+                    <a href="#" pid="101102" warehouse="VIP_BJ">     天津</a> 
+                </li>
+                <li>
+                    <a href="#" pid="103102" warehouse="VIP_SH">     江苏</a> 
+                </li>
+                <li>
+                    <a href="#" pid="103107" warehouse="VIP_SH">     山东</a> 
+                </li>
+                <li>
+                    <a href="#" pid="103101" warehouse="VIP_SH">     上海</a> 
+                </li>
+                <li>
+                    <a href="#" pid="103105" warehouse="VIP_NH">     福建</a> 
+                </li>
+                <li>
+                    <a href="#" pid="103103" warehouse="VIP_SH">     浙江</a> 
+                </li>
+                <li>
+                    <a href="#" pid="103104" warehouse="VIP_SH">     安徽</a> 
+                </li>
+                <li>
+                    <a href="#" pid="102101" warehouse="VIP_BJ">     辽宁</a> 
+                </li>
+                <li>
+                    <a href="#" pid="102103" warehouse="VIP_BJ">     黑龙江</a>
+                 </li>
+                <li>
+                    <a href="#" pid="102102" warehouse="VIP_BJ">     吉林</a> 
+                </li>
+                <li>
+                    <a href="#" pid="106105" warehouse="VIP_CD">     新疆</a> 
+                </li>
+                <li>
+                    <a href="#" pid="106102" warehouse="VIP_CD">     甘肃</a> 
+                </li>
+                <li>
+                    <a href="#" pid="106104" warehouse="VIP_CD">     宁夏</a> 
+                </li>
+                <li>
+                    <a href="#" pid="106103" warehouse="VIP_CD">     青海</a> 
+                </li>
+                </ul>
+                <span>送货到<a href="#" class="areaSellBtn" mars_sead="lpc_top_diqu"><i class="up"></i>北京</a></span>
+            </div>
+        </div>
+    </div>
+    <div class="Chead-main">
+        <div class="Chead-logo">
+            <a href="details.html"></a>
+        </div>
+        <!--搜索-->
+        <div id="Chead_search" class="Chead-search">
+            <div class="search-input">
+                <strong id="search-submit" class="search-submit">搜索</strong> <input autocomplete="off" id="search" value="搜商品" type="text" />
+                <div id="auto" class="searchtip">
+                </div>
+            </div>
+            <p id="hotp">
+                <br />
+            </p>
+        </div>
+        <!--购物车-->
+        <div class="Chead-shopping-wrap">
+            <div class="Chead-shopping" id="Chead-shopping">
+                <div class="shopping-btn">
+                    <strong>0</strong>
+                </div>
+                <div class="shopping-list" style="display:none;">
+                    <div class="shopping-list-title">
+                        <strong></strong>
+                    </div>
+                    <div class="shopping-list-pro noshop" style="display:none;">
+                        您的购物车还没有商品，<br />
+                        赶紧去选购吧！
+                    </div>
+                    <div class="shopping-list-pro haveshop" style="display:none;">
+                        <i></i>
+                        <div class="shopping-list-bar" id="shopping_list_info">
+                        </div>
+                        <p>
+                            共<b id="totalProduct" class="countnum">0</b>件商品
+                        </p>
+                        <p>
+                            <span>共计：<b id="totalMoney" class="countprice"></b></span>
+                        </p>
+                        <a class="goshopping" href="details.html">去购物车结算</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="Cnav-main">
+            <div class="Cnav-menu-btn">
+                <a  href="javascript:"> 商品分类 </a> <i></i>
+                <div class="fl-main">
+                    <div class="float-list" style="display:block">
+                        <div class="orderDivId">
+                            <!-- 前端渲染 -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="Cnav-one">
+                <a href="details.html" >首页</a>
+                <a href="javascript:;" target="_blank">蜂购全球</a>
+            </div>
+            <div class="Cnav-right">
+                <a href="details.html" target="_blank" class="Cnav-right-icon-1"></a>
+                <a href="details.html" target="_blank" class="Cnav-right-icon-2"></a>
+                <a href="details.html" target="_blank" class="Cnav-right-icon-3"></a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="scroll-to-top" id="scroll-to-top"><i></i></div>
+<!--顶通-->
+<!-- header  结束-->
+<div class="main2 clearfloat">
+	<input id="haiTao" type="hidden" value="1">
+	<input id="saleOut" type="hidden" value="">
+	<input type="hidden" id="productId" value="252420475">
+	<input type="hidden" id="sizeId" value="663256894">
+    <div class="path">
+        <b>
+            <a href="index.html" target="_blank">乐蜂网首页</a> 
+            <i class="lf-icon lf-icon-right"></i></b>
+        <b>
+            <a href="list.html" target="_blank">特卖-IT'S SKIN护肤专场专场</a> 
+            <i class="lf-icon lf-icon-right"></i></b>  
+        IT°S SKINIT°S SKIN 晶钻蜗牛霜60ml    
+    </div>
+    <div class="commodity-t-composite">
+        <div class="bigProduct-c" data-sid="663256894" data-pid="252420475" data-haitao="1" data-min="1" data-max="20" data-page="detail" data-anti-brushed="0">
+            <dl>
+                <dd class="dity-brand-time">
+                    <input type="hidden" id="dity_time" value="">
+                    <span id="dity-time-c" class="dity-time-c"> 
+                    </span>
+                    <span class="dity-brand-logo">
+                        <img src="images/global-buy-logo.jpg">
+                    </span>
+                </dd>
+                <dd>
+                    <h1>
+                    	<i>蜂购全球</i>IT°S SKINIT°S SKIN 晶钻蜗牛霜60ml
+                    </h1>
+                    <p>带回柔嫩健康肌肤，让回忆不再停留在记忆中！
+                    </p>
+                </dd>
+                <dt>
+                    <div class="dity-pic">
+                        <img src="images/8809241887782-330.jpg" class="tu1">
+                        <div id="layer"></div>
+                        <div id="mask"></div>
+                        <div class="big">
+                            <img src="images/8809241887782-220.jpg" alt="">
+                        </div>
+                        <div class="dity-tags">
+                        <span>柔嫩光滑</span>
+                        <span>淡化疤痕</span>
+                        <span>收缩毛孔</span>
+                        <div class="dity-share">
+                            <div class="share">
+                                <span style="display: none;">
+                                    <b class="share_b1"></b>
+                                    <b class="share_b2"></b>
+                                    <a class="sina" title="分享到新浪微博" href="other.html"></a>
+                                    <a class="qqt" title="分享到腾讯微博" href="other.html"></a>
+                                    <a class="qqz" title="分享到QQ空间" href="other.html"></a>
+                                    <a class="weixin" title="分享到微信" href="other.html"></a>
+                                </span>
+                                <i></i>
+                                <b style="font-weight:noraml;font-size:12px;">分享到</b>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dity">
+                        <div class="dity-cont">
+                        <input id="dity_time" type="hidden" value="1510884000">
+                            <div class="dity-price-c ">
+                                <span class="dity-title">价格</span>
+                                <span>
+                                    <b class="lighten">¥</b>
+                                    <strong>279.0</strong>
+                                    <b class="dity-countdown">7.2折</b>
+                                    <b class="marketPrice-s">¥ 388.0</b>
+                                </span>
+                            </div>
+                            <!-- 1：买赠 2：满减 3：折扣 4：免邮 from vip wiki -->
+                            <div class="dity-sendTime">
+                                <span class="dity-title">配送</span>
+                                <span class="dity-send-time">预计
+                                    <span style="color:red">11月20日</span>送达</span>
+                            </div>
+                            <div class="dity-size clearfloat">
+                                <ol>
+                                    <li class="dity-size-r">
+                                        <span class="dity-m" id="dity-m"></span>
+                                        <input type="text" value="1" id="dity-input" class="dity-input" maxlength="2">
+                                        <span class="dity-p" id="dity-p"></span>
+                                    </li>
+                                </ol>
+                            </div>
+                            <a id="qianggou" href="javascript:;" class="joinCar db2" mars_sead="lpc_sku_cart">
+                                <b class="add-to-cart-pro ">立即购买</b>
+                            </a>
+                            <span class="pollen-text" title="花粉可在乐蜂APP抵现金使用哦">
+                            购买最多可获得<b>139个</b>花粉
+                            </span>
+                        </div>
+                    </div>
+                </dt>
+            </dl>
+        </div>
+    </div>
+	<div class="main-left" style="padding-top: 50px;">
+        <div class="detail-nav detail-nav-sie" id="detail-nav" style="position: absolute; top: 793px;">
+            <span>
+                <strong>￥279.0</strong>
+                <b>￥388.0</b>
+                <a href="javascript:;" class="joinCar2 btn" id="joinShopping" mars_sead="lpc_sku_b_cart">立即购买</a>
+            </span>
+            <a href="shooping.html" class="down" tag="tabc" mars_sead="lpc_detail">商品详情</a>
+            <a href="details.html" tag="lfcn" mars_sead="lpc_f-service" class="">乐蜂承诺</a>
+            <div class="tip3" style="display: none;">
+                <p class="tip_mes_box"></p>
+                <dl>
+                    <dt>
+                    <img width="90" height="114" src="images/8809241887782-110.jpg"></dt>
+                    <dd>
+                    	IT°S SKINIT°S SKIN 晶钻蜗牛霜60ml
+                    	<p><span><b>¥</b>279.0</span><del>¥388.0</del></p></dd>
+                </dl>
+            </div>
+        </div>
+                        
+        <div class="detail-top" id="detail"><img width="730" height="310" src="images/insurance.jpg"></div>
+        <!--商品详情 s-->
+        <div class="detail">
+            <table class="detail-info-table">
+                <tbody>
+                    <tr>
+                        <td class="title">商品品牌:</td>
+                        <td>IT°S SKIN</td>
+                    </tr> 
+                    <tr>
+                        <td class="title">商品名称:</td>
+                        <td>IT°S SKIN 晶钻蜗牛霜60ml</td>
+                    </tr> 
+                    <tr>
+                        <td class="title">备注:</td>
+                        <td>盒装</td>
+                    </tr> 
+                    <tr>
+                        <td class="title">有效期:</td>
+                        <td>3年（以收到实物为准）</td>
+                    </tr> 
+                    <tr>
+                        <td class="title">规格:</td>
+                        <td>60ml/瓶</td>
+                    </tr> 
+                    <tr>
+                        <td class="title">特点描述:</td>
+                        <td>柔嫩光滑,淡化疤痕,收缩毛孔</td>
+                    </tr> 
+                    <tr>
+                        <td class="title">产地:</td>
+                        <td>韩国</td>
+                    </tr> 
+                    <tr>
+                        <td class="title">货号:</td>
+                        <td>8809241887782</td>
+                    </tr> 
+                </tbody>
+            </table>
+
+            <div class="cont tabc">
+                <p>
+                    <img src="images/8809241887782-110_1.jpg">
+                    <img src="images/8809241887782-651.jpg">
+                    <img src="images/8809241887782-652.jpg">
+                    <img src="images/8809241887782-653.jpg">
+                    <img src="images/8809241887782-654.jpg">
+                    <img src="images/8809241887782-655.jpg">
+                    <img src="images/8809241887782-656.jpg">
+                    <img src="images/8809241887782-657.jpg">
+                    <img src="images/178585290.jpg">
+                    <img src="images/8809241887782-110_4.jpg">
+                </p>
+            </div>
+        </div>
+        <!--商品详情 e-->
+        <!--乐蜂承诺 s-->
+        <img src="images/tellyou.jpg"><div class="f-service" id="f-service" style="border-bottom: none;">
+			<h4 class="t-lfcn">&nbsp;</h4>
+            <ul>
+				<li cimg="f-service-img1.jpg" class="h"> 
+                    <b class="f-s-img-1"></b></li>
+                <li cimg="f-service-img2.jpg"> 
+                    <b class="f-s-img-2"></b></li>
+                <li cimg="f-service-img3.jpg"> 
+                    <b class="f-s-img-3"></b></li>
+                <li cimg="f-service-img7.jpg"> 
+                    <b class="f-s-img-4"></b></li>
+                <li cimg="f-service-img9.jpg"> 
+                    <b class="f-s-img-5"></b></li>
+			</ul>
+			<div class="f-service-con"><img alt="" src="images/f-service-img1.jpg"></div>
+		</div><img src="images/31add2b80ddd4692f2d27605efb41dbd.jpg" class="img-product-service">
+        <!--乐蜂承诺 e-->
+	</div>
+    <div class="main-right">
+        <div class="sidebar">
+            <h3><i></i>浏览该商品的用户也购买了</h3>
+        <div id="cy">
+        <dl>
+            <dt>
+                <a href="shooping.html" title="" target="_blank" mars_sead="lpc_tj_sku_kim"><img src="images/6ed2b7d4e2a74df28e4195de7da1be62-5.jpg"></a>
+            </dt>
+            <dd class="nam"><a target="_blank" href="shooping.html" mars_sead="lpc_tj_sku_kim">葡萄籽鲜活亮肤矿物柔肤水</a></dd>
+            <dd class="pri"><span><b>￥</b>99</span><del class="fr mark_price">￥178</del></dd>
+        </dl>
+        <dl>
+            <dt>
+                <a href="shooping.html" title="" target="_blank" mars_sead="lpc_tj_sku_kim"><img src="images/45c320a4-05ae-4908-918f-99b7006d8319.jpg"></a>
+            </dt>
+            <dd class="nam"><a target="_blank" href="shooping.html" mars_sead="lpc_tj_sku_kim">纯白凝皙夜用焕肤霜</a></dd><dd class="pri"><span><b>￥</b>280</span><del class="fr mark_price">￥369</del></dd>
+        </dl>
+        <dl>
+            <dt>
+                <a href="shooping.html" title="" target="_blank" mars_sead="lpc_tj_sku_kim"><img src="images/220f3c85-7341-4b56-8d8e-d00dd242f62d_t.jpg"></a>
+            </dt>
+            <dd class="nam"><a target="_blank" href="shooping.html" mars_sead="lpc_tj_sku_kim">U-ZA免洗洗手液（喷雾）50ml</a></dd>
+            <dd class="pri"><span><b>￥</b>28</span><del class="fr mark_price">￥59</del></dd>
+        </dl>
+        <dl>
+            <dt>
+                <a href="shooping.html" title="" target="_blank" mars_sead="lpc_tj_sku_kim"><img src="images/7ccc45065c2b4a859054442db61a3fa5-5.jpg"></a>
+            </dt>
+            <dd class="nam"><a target="_blank" href="shooping.html" mars_sead="lpc_tj_sku_kim">依云evian婴儿矿泉水喷雾300ml*2 温和补水 保湿舒缓</a></dd>
+            <dd class="pri"><span><b>￥</b>158</span><del class="fr mark_price">￥190</del></dd>
+        </dl>
+        <dl>
+            <dt>
+                <a href="shooping.html" title="" target="_blank" mars_sead="lpc_tj_sku_kim"><img src="images/9fc6487c-43d0-45f8-b32d-597050552e69.jpg"></a>
+            </dt>
+            <dd class="nam"><a target="_blank" href="shooping.html" mars_sead="lpc_tj_sku_kim">亮颜心肌素颜霜</a></dd>
+            <dd class="pri"><span><b>￥</b>68</span><del class="fr mark_price">￥198</del></dd>
+        </dl>
+        <dl>
+            <dt>
+                <a href="shooping.html" title="" target="_blank" mars_sead="lpc_tj_sku_kim"><img src="images/18abf5f8-17da-46c5-8343-dc095c713d80.jpg"></a>
+            </dt>
+            <dd class="nam"><a target="_blank" href="shooping.html" mars_sead="lpc_tj_sku_kim">雅芳滢泽高保湿润养水（倍润型）150ml</a></dd>
+            <dd class="pri"><span><b>￥</b>45</span><del class="fr mark_price">￥75</del></dd>
+        </dl>
+        <dl>
+            <dt>
+                <a href="shooping.html" title="" target="_blank" mars_sead="lpc_tj_sku_kim"><img src="images/accd83b6-c262-491b-831f-af6d330af075.jpg"></a>
+            </dt>
+            <dd class="nam"><a target="_blank" href="shooping.html" mars_sead="lpc_tj_sku_kim">女神的魔盒</a></dd>
+            <dd class="pri"><span><b>￥</b>99</span><del class="fr mark_price">￥398</del></dd>
+        </dl>
+        <dl>
+            <dt>
+                <a href="shooping.html" title="" target="_blank" mars_sead="lpc_tj_sku_kim"><img src="images/8b4afe53940c445bb44371bcba9060db-5.jpg"></a>
+            </dt>
+            <dd class="nam"><a target="_blank" href="shooping.html" mars_sead="lpc_tj_sku_kim">薰衣草油/10ml</a></dd>
+            <dd class="pri"><span><b>￥</b>76</span><del class="fr mark_price">￥138</del></dd>
+        </dl>
+        <dl>
+            <dt>
+                <a href="shooping.html" title="" target="_blank" mars_sead="lpc_tj_sku_kim"><img src="images/b6278ba32bed48b1824cab60042f65e1-5.jpg"></a>
+            </dt>
+            <dd class="nam"><a target="_blank" href="shooping.html" mars_sead="lpc_tj_sku_kim">矿物泥浆鼻膜 60g【平衡油脂】</a></dd>
+            <dd class="pri"><span><b>￥</b>69</span><del class="fr mark_price">￥69</del></dd>
+        </dl>
+        <dl>
+            <dt>
+                <a href="shooping.html" title="" target="_blank" mars_sead="lpc_tj_sku_kim"><img src="images/2b18a6d4e5cc45b5a833fed2628fcebf-5.jpg"></a>
+            </dt>
+            <dd class="nam"><a target="_blank" href="shooping.html" mars_sead="lpc_tj_sku_kim">谜尚魅力幻金凝彩至真嫩白柔护霜（花BB21号色）45g</a></dd>
+            <dd class="pri"><span><b>￥</b>149</span><del class="fr mark_price">￥178</del></dd>
+        </dl>
+        </div></div>
+    </div>
+</div>
+
+<!--加入购物车成功-->
+<div class="alt-succ" id="addsuccess" style="display:none;">
+    <div class="sum">
+        <h3>该商品已成功放入购物车</h3>
+        <p>购物车共 <b>1</b> 件商品&nbsp;&nbsp;合计：<b></b> 元</p>
+        <p><a class="pay" href="shooping.html">去结算</a><a href="javascript:;">&lt;&lt;继续购物</a></p>
+        <span class="succ-ico"></span>
+    </div>
+    <a class="succ-close" href="javascript:;">关闭</a>
+</div>
+<!--加入购物车失败-->
+<div class="alt-succ failure" style="display: none;">
+    <div class="sum">
+        <h3><span class="succ-ico"></span>加入购物车失败请稍后再试</h3>
+    </div>
+    <a class="succ-close" href="javascript:;">关闭</a>
+</div>
+<!--页尾-->
+<div class="Cfooter">
+    <div class="Cfooter_service">
+        <ul class="w1000">
+            <li class="li01" onclick="window.open('shooping.html')">
+                <br />
+            </li>
+            <!--免运费-->
+            <li class="li02" onclick="window.open('shooping.html')">
+                <br />
+            </li>
+            <!--全正品-->
+            <li class="li03" onclick="window.open('shooping.html')">
+                <br />
+            </li>
+            <!--最放心-->
+        </ul>
+    </div>
+    <div class="Cfooter-info">
+        <dl class="w1000">
+            <dt>
+                <strong></strong><em>客服 9:00-24:00</em> 
+            </dt>
+            <dd>
+                <strong>新手指南</strong> <a target="_blank" href="shooping.html">购物流程</a> <a target="_blank" href="shooping.html">优惠券规则</a> <a target="_blank" href="shooping.html">联系客服</a> <a target="_blank" href="shooping.html">常见问题</a> 
+            </dd>
+            <dd>
+                <strong>付款方式</strong> <a target="_blank" href="shooping.html">在线支付</a> <a target="_blank" href="shooping.html">货到付款</a> <a target="_blank" href="shooping.html">钱包支付</a> 
+            </dd>
+            <dd>
+                <strong>配送服务</strong> <a target="_blank" href="shooping.html">配送时效及运费</a> <a target="_blank" href="shooping.html">验货与签收</a> 
+            </dd>
+            <dd>
+                <strong>售后服务</strong> <a target="_blank" href="shooping.html">退货政策</a> <a target="_blank" href="shooping.html">退货流程</a> <a target="_blank" href="shooping.html">退款方式及时效</a> 
+            </dd>
+            <dd class="f-sao1">
+                <strong>乐蜂网微信</strong><b></b> 
+            </dd>
+        </dl>
+    </div>
+    <div class="Cfooter-cr">
+        <a rel="nofollow" target="_blank" href="shooping.html">  
+            关于乐蜂</a> 
+        <a rel="nofollow" target="_blank" href="shooping.html">
+            免责声明</a> 
+        <a rel="nofollow" target="_blank" href="shooping.html">
+            隐私声明</a> 
+        <a rel="nofollow" target="_blank" href="shooping.html">
+            版权声明</a> 
+        <a rel="nofollow" target="_blank" href="shooping.html">
+            招聘信息</a> 
+        <a rel="nofollow" target="_blank" href="shooping.html">
+            联系我们</a> 
+        <a rel="nofollow" target="_blank" href="shooping.html">
+            帮助中心</a> 
+        <a rel="nofollow" target="_blank" href="shooping.html">
+            友情链接</a> <br />
+        <span>Copyright <b>&copy;</b> 2008-2016 Lefeng.com All 
+            Rights Reserved.</span> 
+        <span>乐蜂（上海）信息技术有限公司</span> 
+        <a target="_blank" href="other.html">津ICP备15005555号-1</a>
+            &nbsp;&nbsp;
+        <span>京公网安备11010502014183</span> 
+        <a rel="nofollow" target="_blank" href="other.html">营业执照</a> 
+        <div class="Cfooter-cr-img">
+            <a id="___szfw_logo___" class="cxwz" rel="nofollow" target="_blank" href="other.html"></a> 
+            <a class="kxwz" rel="nofollow" target="_blank" href="other.html"></a> 
+            <a class="pjzxlm" rel="nofollow" target="_blank" href="other.html"></a>
+            <a class="itrust" rel="nofollow" target="_blank" href="other.html">中国互联网信用评价中心</a> 
+            <a href="other.html" target="_blank" rel="nofollow" class="xfwq"></a> 
+        </div>
+    </div>
+</div>
+<!--页尾-->
+</body>
+</html>

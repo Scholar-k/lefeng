@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset=UTF-8/>
+    <title>蜂购全球-乐蜂网</title>
+    <meta name="keywords" content="乐蜂网,乐蜂,化妆品网站,商品特卖,特卖网,特卖">
+    <script src="js/jquery-1.11.1.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/public.css">
+    <link rel="stylesheet" type="text/css" href="css/register.css">
+    <script type="text/javascript" src="js/public.js"></script>
+    <script type="text/javascript" src="js/register.js"></script>
+</head>
+<body class="bodyBk login">
+<div class="Chead-info">
+	<div class="Chead-info-box">
+	<!-- 手机乐蜂 -->
+		<a class="Chead-app" href="javascript:;" mars_sead="lpc_top_diqu">手机乐蜂</a> 
+		<div class="Chead-appDown" style="display:none;">
+			<div>
+				<img src="images/xz_icon_for_lf.jpg" height="112" width="112"> 
+				<h6>
+					<b class="i1"></b><b class="i2"></b>客户端
+				</h6>
+			</div>
+			<span class="fast-nav turl">
+				<a class="Chead-app" href="javascript:;" mars_sead="lpc_top_diqu">手机乐蜂</a>
+			</span>
+		</div>
+	<!-- 收藏乐蜂 --> 
+		<span class="Chead-save" id="Chead-save">收藏乐蜂</span>
+	<!-- 快速导航 -->
+		<span class="fast-nav turl" id="Chead_fastnav">快速导航<i></i></span> 
+		<div class="Chead-floatmenu" style="display:none;">
+			<div id="floatmenucon">
+				<a href="other.html" mars_sead="lpc_top_diqu">帮助中心</a> 
+				<a href="other.html" mars_sead="lpc_top_diqu">联系客服</a> 
+				<a href="other.html" mars_sead="lpc_top_diqu">商务合作</a> 
+				<h6>
+					<img src="images/wx_icon_for_lf.jpg" height="112" width="112"> 
+					<b>惊喜码上来</b> 
+				</h6>
+			</div>
+		<span class="fast-nav turl" style="color:#666;">快速导航<i></i></span> 
+	</div>
+		<a class="turl" href="index.html" mars_sead="lpc_top_diqu">乐蜂首页</a> 
+	</div>
+</div>
+
+
+<div class="Logo-r">
+    <div class="Logo-info-r">
+        <a href="index.html"></a>
+    </div>
+</div>
+<div class="loginBk">
+    <div class="warp">
+		<div class="css3 loginContent">
+            <div class="loginTitle">
+               <span class="lc1"></span>
+               <span class="lcr">已有乐蜂账号 ? <a href="login.html">登录</a></span>
+            </div>
+			<ul class="loginInput">
+              	<div class="mailtips" style="display:none;"></div>
+                <li class="mailwrap nobk">
+                  	<h2>手机号码</h2>
+                  	<input type="text" value="" name="mobileNo" id="mobileNo" maxlength="11">
+                  	<div class="focus_text mobileNoFlag successShowFlag" id="mobileNoSuccessShow" style="display: none;">请输入手机号</div> 
+                  	<div class="errorIcon mobileNoFlag" id="mobileNoSuccessPic" style="display: none;"></div>
+                  	<div class="errorTips error mobileNoFlag" id="mobileNoErrorShow" style="display: none;">手机格式有误，请重新输入</div>
+                  	<div class="errorIcon no mobileNoFlag" id="mobileNoErrorPic" style="display: none;"></div>
+                </li>    
+            <!--图形验证码开始 -->
+		        <li class="yzmwrap" id="yzmSpan">
+					<h2>验证码</h2>
+					<input type="text" name="yzm" id="yzm" maxlength="4">
+					<span> 
+                        <a href="javaScript:;" id="yzmPic">
+                        	<img id="yzmPicImg" height="40" width="85" src="data:image/png"></a> 
+                    	<a href="javaScript:;" id="changeYzm">看不清?<br>换一张</a> 
+                    </span>
+                    <input type="hidden" id="picUUID" value="edad23e43a984f7c873dd01523352f04">
+                    <div class="focus_text yzmFlag successShowFlag" id="yzmSuccessShow" style="display: none;"></div> 
+                  	<div class="errorIcon yzmFlag" id="yzmSuccessPic" style="display: none;"></div>
+                  	<div class="errorTips error yzmFlag" id="yzmErrorShow" style="display: none;"></div>
+                  	<div class="errorIcon no yzmFlag" id="yzmErrorPic" style="display: none;"></div>
+                </li>
+			<!--图形验证码结束 -->
+                <li class="yzmwrap">
+			      	<h2>短信验证码</h2>
+			      	<input id="mobileYzm" name="mobileYzm" type="text" value="" maxlength="6" disabled="disabled">
+			      	<span mode="1" class="hide">
+			        	<a href="javaScript:;">
+			        		<img height="40" width="85" src="images/toRegister"></a>
+			        	<a href="###">看不清?<br>换一张</a>
+		          	</span>
+                 	<span mode="2">
+			        	<input name="sendSmsBtn" id="sendSmsBtn" type="button" class="sendSmsBtn" value="获取短信验证码">
+		          	</span>
+		          	<div class="focus_text mobileYzmFlag successShowFlag" id="mobileYzmSuccessShow" style="display: none;"></div> 
+                  	<div class="errorIcon mobileYzmFlag" id="mobileYzmSuccessPic" style="display: none;"></div>
+                  	<div class="errorTips error mobileYzmFlag" id="mobileYzmErrorShow" style="display: none;">手机验证码错误</div>
+                  	<div class="errorIcon no mobileYzmFlag" id="mobileYzmErrorPic" style="display: none;"></div>
+                  	<input type="hidden" value="" name="ssid" id="ssid">
+		        </li>
+		        
+			    <li class="pwwrap">
+			      <h2>密码</h2>
+			      <input type="password" name="passwd" id="passwd" value="" maxlength="20" minlength="6">
+			      <div class="level" style="display:none;">安全强度<b class="cl1 clFlag" id="cl1">弱</b><b class="cl2 clFlag" id="cl2">中</b><b class="cl3 clFlag" id="cl3">强</b></div>
+                  <div class="focus_text passwdFlag successShowFlag" id="passwdSuccessShow" style="display: none;">8-20位字符，推荐字母、数字和符号组合的密码</div> 
+                  <div class="errorIcon passwdFlag" id="passwdSuccessPic" style="display: none;"></div>
+                  <div class="errorTips error passwdFlag" id="passwdErrorShow" style="display: none;">密码错误</div>
+                  <div class="errorIcon no passwdFlag" id="passwdErrorPic" style="display: none;"></div>
+		        </li>
+			    <li class="pwwrap">
+			      <h2>确认密码</h2>
+			      <input type="password" name="passwd1" id="passwd1" value="" maxlength="20" minlength="6">
+                  <div class="focus_text passwd1Flag successShowFlag" id="passwd1SuccessShow" style="display: none;">请再次输入密码</div> 
+                  <div class="errorIcon passwd1Flag" id="passwd1SuccessPic" style="display: none;"></div>
+                  <div class="errorTips error passwd1Flag" id="passwd1ErrorShow" style="display: none;">两次密码不一致</div>
+                  <div class="errorIcon no passwd1Flag" id="passwd1ErrorPic" style="display: none;"></div>
+		        </li>
+			    <li class="buttonwrap"><a href="javaScript:;" id="registerBtn">同意协议并注册</a></li>
+			    <li class="msgwrap"><div><a href="other.html" target="_blank">《乐蜂网用户协议》 <br> <br> <br> <br></a></div></li>
+		     </ul>
+		   </div>
+    </div>    
+</div>
+
+<!--页尾-->
+<div class="Cfooter loginfooter">
+	<div class="Cfooter-cr">
+		<a rel="nofollow" target="_blank" href="details.html">  
+            关于乐蜂</a> 
+        <a rel="nofollow" target="_blank" href="details.html">
+            免责声明</a> 
+        <a rel="nofollow" target="_blank" href="details.html">
+            隐私声明</a> 
+        <a rel="nofollow" target="_blank" href="details.html">
+            版权声明</a> 
+        <a rel="nofollow" target="_blank" href="details.html">
+            招聘信息</a> 
+        <a rel="nofollow" target="_blank" href="details.html">
+            联系我们</a> 
+        <a rel="nofollow" target="_blank" href="details.html">
+            帮助中心</a> 
+        <a rel="nofollow" target="_blank" href="details.html">
+            友情链接</a> <br />
+		<span>Copyright <b>&copy;</b> 2008-2016 Lefeng.com All 
+            Rights Reserved.</span> 
+        <span>乐蜂（上海）信息技术有限公司</span> 
+        <a target="_blank" href="other.html">津ICP备15005555号-1</a> &nbsp;&nbsp;
+        <span>京公网安备11010502014183</span> 
+        <a rel="nofollow" target="_blank" href="other.html">营业执照</a> 
+		<div class="Cfooter-cr-img">
+			<a id="___szfw_logo___" class="cxwz" rel="nofollow" target="_blank" href="other.html"></a> 
+            <a class="kxwz" rel="nofollow" target="_blank" href="other.html"></a> 
+            <a class="pjzxlm" rel="nofollow" target="_blank" href="other.html"></a>
+            <a class="itrust" rel="nofollow" target="_blank" href="other.html">中国互联网信用评价中心</a> 
+            <a href="other.html" target="_blank" rel="nofollow" class="xfwq"></a> 
+		</div>
+	</div>
+</div>
+<!--页尾-->
+</body>
+</html>
