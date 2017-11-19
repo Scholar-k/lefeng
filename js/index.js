@@ -35,7 +35,7 @@ var timer=setInterval(function lun(){
 jq(".flm-1").click(function(){
     jq(this).addClass("active");
     jq(".flm-2").removeClass("active");
-    jq("body,html").animate({"scrollTop":jq(".tit-2").offset().top},1000)
+    jq("body,html").animate({"scrollTop":jq(".tit-2").offset().top-jq(window).height()*.16},1000)
 })
 jq(".flm-2").click(function(){
     jq(this).addClass("active");
@@ -52,6 +52,7 @@ jq("#scroll-to-top").click(function(){
 })
 
 // 滚动条触发
+jq(".float-left-menu").hide();
 jq(window).scroll(function(){
     var tops = jq(document).scrollTop();
     // 触发滚动条,显示返回顶部
@@ -79,5 +80,18 @@ jq(window).scroll(function(){
         jq(".flm-2").removeClass("active");
     }*/
 })
+// 活动吸顶
+window.onscroll = function(){
+    //1 获取页面滚走的距离
+    var tops = document.body.scrollTop || document.documentElement.scrollTop;
+    //2 当页面滚走的距离 大于 头部的高度时   开始吸顶
+    if( tops > 0 ){
+        jq("#ceiling").css({"position":"fixed","top":0});
+    }else{
+        jq("#ceiling").css({"position":""});
+    }
+}
+
+
 
 })
