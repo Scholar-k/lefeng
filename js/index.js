@@ -40,7 +40,7 @@ $(".flm-1").click(function(){
 $(".flm-2").click(function(){
     $(this).addClass("active");
     $(".flm-1").removeClass("active");
-    $("body,html").animate({"scrollTop":$(".tit-7").offset().top},1000)
+    $("body,html").animate({"scrollTop":$(".tit-7").offset().top-$(window).height()*.16},1000)
 })
 
 
@@ -73,12 +73,12 @@ $(window).scroll(function(){
     }else{
         $(".flm-1").removeClass("active");
     }
-    /*if(tops>=($(".tit-7").offset().top)-$(window).height()/2){
-        $("flm-2").addClass("active");
+    if(tops>=($(".tit-7").offset().top)-$(window).height()/2){
+        $(".flm-2").addClass("active");
         $(".flm-1").removeClass("active");
     }else{
         $(".flm-2").removeClass("active");
-    }*/
+    }
 })
 // 活动吸顶
 window.onscroll = function(){
@@ -96,6 +96,7 @@ window.onscroll = function(){
 
 //json部分
 window.onload = function(){
+    //品牌特卖ajax
     $.ajax({
         type:"get",
         url:"http://127.0.0.1/item/json/indexup.json",
@@ -117,6 +118,38 @@ window.onload = function(){
         </div>`
             }
             $(".content-2").html( conStr );
+        }   
+    })
+    //爆款尝鲜ajax
+    $.ajax({
+        type:"get",
+        url:"http://127.0.0.1/item/json/indexdown.json",
+        async:true,
+        success : function(json){
+            var conStr = "";
+            for( var j = 0 ; j < json.tit7.length ; j++ ){
+                var products = json.tit7[j];
+    conStr+=` <div class="pro-list pro-list-" data-sid="462078265" data-pid="181532559" data-haitao="false" data-min="1">
+    <dl>
+        <dt class="pro-pic"> 
+            <a href="list.html" target="_blank" title="${products.title}"> 
+            <img alt="" title="${products.title}" src="${products.src}"> </a> 
+        </dt>
+        <dd class="pro-nam">
+            <b> ${products.b} </b> 
+            <a href="list.html" target="_blank" title="${products.title}">${products.title}</a> 
+            <i></i> 
+        </dd>
+        <dd class="pro-pri"> 
+            <span>${products.span}</span>
+            <b> ${products.b2}</b> 
+            <a class="joinCar add-to-cart hide disabled" href="javascript:void(0)">${products.a}</a> 
+        </dd>
+        <div class="wrap"></div> </dl> 
+    </div>`
+            }
+            $(".content-7").html( conStr );
+            $(".pro-pri a").css("background-positionY","-56px");
         }   
     })
 }
