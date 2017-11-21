@@ -280,6 +280,13 @@
 	border: solid 1px #eee;
 	margin-left: 29px;
 }
+.bigProduct-c dl dt .dity-pic .m-pic{
+	position: relative;
+	height: 347px;
+	width: 600px;
+	border: solid 1px #eee;
+	margin-left: 0px;
+}
 .bigProduct-c dl dt .dity-pic img{
 	display:block;
 	/*max-width: 600px;*/
@@ -311,7 +318,7 @@
 	position:absolute;
 	top:0;
 	left:600px;
-	z-index:999;
+	z-index:999999999;
 	display:none;
 }
 .bigProduct-c dl dt .dity-pic .big img{
