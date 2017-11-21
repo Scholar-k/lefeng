@@ -55,12 +55,13 @@ window.onload = function(){
                         </a>
                         <div class="wraptr">
                             <!-- 缺货商品在图片右上角显示已抢光 -->
-                            <b class="product_no"></b>
+                            <b class="product_no">${product.temp}</b>
                         </div>
                         <ul class="pro-tags">
                             <li>${product.li1}</li>
                             <li>${product.li2}</li>
                             <li>${product.li3}</li>
+                            <li>${product.li4}</li>
                         </ul>
                     </dt>
 
@@ -74,16 +75,19 @@ window.onload = function(){
                         <span class="price">${product.price}</span>
                         <b> ${product.b} </b>
                         <del class="spri">${product.spri}</del>
-                        <a class="to joinCar add-to-cart disabled" href="javascript:void(0)">${product.a}</a>
+                        <a class="to joinCar add-to-cart disabled" href="javascript:void(0)">${product.a}<b>${product.temp}</b></a>
                     </dd>
                 </dl>
             </div>`
 			}
 			$(".makeup").html( conStr );
+			$(".pro-tags li:empty").remove();
+			$(".pri a b:empty").parent().css("background-positionY","-56px");	
+			$(".wraptr b:empty").remove();
 		}
 	
 		/*//商品添加  点击商品 将商品信息存入到cookie中
-		$(".makeup").on("click","button",function(){
+		$(".joinCar").on("click","button",function(){
 			var arr = [];
 			var flag = true;//如果值为真 就向arr中push商品
 			var datajson = {
@@ -93,6 +97,7 @@ window.onload = function(){
 	            li1:$(this).next().data("li1"),
 	            li2:$(this).next().data("li2"), 
 	            li3:$(this).next().data("li3"),
+	            li4:$(this).next().data("li4"),
 	            span:$(this).next().data("span"),
 	            price:$(this).next().data("price"),
 	            b:$(this).next().data("b"),
