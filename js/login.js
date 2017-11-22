@@ -5,7 +5,7 @@ var login = {
 		login.showYZM();//显示图形验证码
 		$("#yzmPic").bind('click',login.refreshYzm);//绑定刷新图形页面click
 		$("#changeYzm").bind('click',login.refreshYzm);
-		login.showErrorMsg();//如果有错误信息，显示错误信息
+		//login.showErrorMsg();//如果有错误信息，显示错误信息
 		login.bindLoginNameFcous();//绑定账号框的fcous事件
 		login.bindPasswdFcous();//绑定密码框的fcous事件
 		//绑定回车事件
@@ -32,7 +32,8 @@ var login = {
 		var passwd = $("#passwd").val();
 		var yzm = $("#yzm").val();
 		var isYzmShow = $("#yzmSpan").is(":hidden");
-
+		var str = document.cookie;
+		var arr  =str.split("=");
 		//校验账号为空
 		if($.trim(loginName)==""){
 			login.hideErrorShow("loginNameFlag");//隐藏自己框下的所有提示
@@ -49,12 +50,20 @@ var login = {
 			$("#passwdErrorPic").show();//显示提示信息
 			return false;
 		}
-		//校验验证码为空
-		if(!isYzmShow && $.trim(yzm)==""){
-			login.hideErrorShow("yzmFlag");//隐藏自己框下的所有提示
-			$("#yzmErrorShow").html("请输入验证码");
-			$("#yzmErrorShow").show();//显示提示信息
-			$("#yzmErrorPic").show();//显示提示信息
+		//校验账号为未注册账号
+		if(JSON.parse(arr[0])[0].uname!=$.trim(loginName)){
+			login.hideErrorShow("loginNameFlag");//隐藏自己框下的所有提示
+			$("#loginNameErrorShow").html("请注册账号");
+			$("#loginNameErrorShow").show();//显示提示信息
+			$("#loginNameErrorPic").show();//显示提示信息
+			return false;
+		}
+		//校验账号密码是否不正确
+		if(JSON.parse(arr[0])[0].upwd!=$.trim(passwd)){
+			login.hideErrorShow("loginNameFlag");//隐藏自己框下的所有提示
+			$("#loginNameErrorShow").html("密码不正确");
+			$("#loginNameErrorShow").show();//显示提示信息
+			$("#loginNameErrorPic").show();//显示提示信息
 			return false;
 		}
 		return true;
@@ -66,6 +75,7 @@ var login = {
 			$("#passwd").val(login.encrypt($("#passwd").val()));
 			LFControl.loading.Start();
 			$("#loginform").submit();
+			alert("登录成功");
 		}
 	},
 	//显示图形验证码

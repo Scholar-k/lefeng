@@ -4,10 +4,10 @@ register = {
 		register.bind.bindPasswdFcous();//绑定密码框fcous
 		register.bind.bindPasswd1Fcous();//绑定再次密码框fcous
 		register.bind.bindPasswd1Blur();//绑定再次密码框Blur
-		register.bind.bindYzmFcous();//绑定图形验证码框的fcous事件
+		//register.bind.bindYzmFcous();//绑定图形验证码框的fcous事件
 		register.bind.bindRegisterBtnClick();//绑定同意协议并注册click事件
 		register.bind.bindPasswdKeyUp();//绑定密码框的keyUp事件
-		register.showYZM();//显示图形验证码
+		//register.showYZM();//显示图形验证码
 		//绑定回车事件
 		$(document).keydown(function(event){
 			switch (event.which) {
@@ -56,14 +56,14 @@ register.bind={
 
 			});
 		},
-		//绑定图形验证码框的fcous事件
+		/*//绑定图形验证码框的fcous事件
 		bindYzmFcous:function(){
 			$("#yzm").focus(function(){
 				register.func.hideErrorShow("yzmFlag");//隐藏自己框下的所有提示
 				$(".successShowFlag").hide();//所有的成功提示隐藏
 
 			});
-		},
+		},*/
 		//绑定再次输入密码框的fcous事件
 		bindPasswd1Fcous:function(){
 			$("#passwd1").focus(function(){
@@ -89,7 +89,7 @@ register.bind={
 		//绑定注册按钮click事件
 		bindRegisterBtnClick:function(){
 			$("#registerBtn").bind('click',function(){
-				_tag.dcsMultiTrack('wt.s_cart','register');//BI
+				//_tag.dcsMultiTrack('wt.s_cart','register');//BI
 				if(register.func.checkForm()){
 					//注册
 					register.func.doRegister();
@@ -175,15 +175,6 @@ register.func={
 				$("#mobileNoErrorPic").show();
 				return false;
 			}
-			//校验手机验证码为空
-			var mobileYzm = $("#mobileYzm").val();
-			if(mobileYzm==null || $.trim(mobileYzm)==""){
-				register.func.hideErrorShow("mobileYzmFlag");//隐藏自己框下的所有提示
-				$("#mobileYzmErrorShow").html("请输入短信验证码");
-				$("#mobileYzmErrorShow").show();
-				$("#mobileYzmErrorPic").show();
-				return false;
-			}
 			//校验密码为空
 			var passwd = $("#passwd").val();
 			if(passwd==null || $.trim(passwd)==""){
@@ -228,16 +219,6 @@ register.func={
 				$("#passwd1ErrorShow").show();//显示提示信息
 				return false;
 			}
-			//校验ssid不为空
-			var ssid = $("#ssid").val();
-			if(ssid!=null || $.trim(ssid)!=""){
-				register.func.hideErrorShow("mobileYzmFlag");//隐藏自己框下的所有提示
-				$("#mobileYzmErrorShow").html("您还没有获取短信验证码");
-				$("#mobileYzmErrorShow").show();
-				$("#mobileYzmErrorPic").show();
-				return false;
-			}
-			return true;
 		},
 		//注册
 		doRegister:function(){
@@ -247,6 +228,12 @@ register.func={
 			var mobileYzm = $("#mobileYzm").val();
 			LFControl.loading.Start();//添加遮盖浮层
 			LFControl.loading.End();//关闭遮盖浮层
+			//将信息存入cookie中
+			var arr = [{"uname":mobileNo,"upwd":passwd}];
+			//将arr中的值存入到cookie中
+			document.cookie = "userlist=" + JSON.stringify( arr );
+			alert("注册成功,请登录账号");
+			window.location.href="login.html";
 		},
 		//检验密码复杂度
 		checkLevel:function(){
@@ -262,7 +249,6 @@ register.func={
 $(document).ready(function () {
 	register.init();
 });
-
 
 
 

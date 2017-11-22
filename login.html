@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="css/login.css">
     <script type="text/javascript" src="js/public.js"></script>
     <script type="text/javascript" src="js/login.js"></script>
+    <script type="text/javascript" src="js/cookie.js"></script>
 </head>
 <body class="bodyBk login">
 <div class="Chead-info">
@@ -58,7 +59,7 @@
     	<input type="hidden" id="code" name="code" value="50001">
     	<input type="hidden" id="msg" name="msg" value="校验码安全警告">
     <form id="loginform" method="post" name="loginform" action="index.html">
-        <input type="hidden" id="sessionId" name="sessionId" value="729fa237d438b77a14369f153f6ebe2f">
+        <input type="hidden" id="sessionId" name="sessionId" value="729fa237d4">
         <input type="hidden" id="returnUrl" name="returnUrl" value="other.html">
         <div class="css3 loginContent">
             <div class="loginTitle">
@@ -112,7 +113,7 @@
 					<span> 
                         <a href="javaScript:;" id="yzmPic">
            	<!-- 图片验证码 -->
-                        	<img id="yzmPicImg" height="40" width="85" src="data:image/png"></a> 
+                        	<img id="yzmPicImg" height="40" width="85" src="images/wx_icon_for_lf.jpg"></a> 
                     	<a href="javaScript:;" id="changeYzm">看不清?<br>换一张</a> 
                     </span>
                     <div class="focus_text yzmFlag successShowFlag

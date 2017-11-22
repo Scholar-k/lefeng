@@ -54,6 +54,7 @@ $("#scroll-to-top").click(function(){
 // 滚动条触发
 $(".float-left-menu").hide();
 $(window).scroll(function(){
+    // document.body.scrollTop || document.documentElement.scrollTop;
     var tops = $(document).scrollTop();
     // 触发滚动条,显示返回顶部
     $("#scroll-to-top").show();

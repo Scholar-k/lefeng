@@ -18,7 +18,7 @@ li.yzmwrap .hide, .yzmwrap span.hide,.hide{
 }
 .clear{zoom:1}
 .clear:after{display:block;clear:both;content:"";}
-#Chead_tip_close,.cont dl dd p .sgo,.Cfooter-copyright-img a,.Cfooter-info .f-sao1 b,.Cfooter-info .f-sao2 b,.Cfooter-tel b,.Cfooter-service dl dt,.Cnav-starp dt i,.Cnav-starp dt b,.star b,.star i,.float-list-s1,.float-list-s2,.float-list dl dt strong,.float-list-btn b,.shopping-list .goshopping,.noshop b,#cartbuy,.shopping-btn,.search-input,.Chead-app,.ad-slide p b i{background:url(../images/icon-dl.png) no-repeat;}
+#Chead_tip_close,.cont dl dd p .sgo,.Cfooter-copyright-img a,.Cfooter-info .f-sao1 b,.Cfooter-info .f-sao2 b,.Cfooter-tel b,.Cfooter-service dl dt,.Cnav-starp dt i,.Cnav-starp dt b,.star b,.star i,.float-list-s1,.float-list-s2,.float-list dl dt strong,.float-list-btn b,.shopping-list .goshopping,.noshop b,#cartbuy,.shopping-btn,.search-input,.Chead-app,.ad-slide p b i{}
 .Chead-tip-arrow,.arrow-down,.first-ad h3 a i,.float-list-btn i,.shopping-list i,.Chead-info i,.nav-tab b.on i{display:inline-block;width:0;height:0;font-size:0;overflow:hidden;}
 .Chead-logo,.Chead-logo a{position:absolute;left:0;width:220px;height:110px;}
 
