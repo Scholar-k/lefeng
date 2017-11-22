@@ -2,7 +2,6 @@ var login = {
 	//页面初始化加载页面
 	init:function() {
 		$("#formSubmit").bind('click',login.doLogin);//绑定登录按钮click
-		//login.showYZM();//显示图形验证码
 		//$("#yzmPic").bind('click',login.refreshYzm);//绑定刷新图形页面click
 		//$("#changeYzm").bind('click',login.refreshYzm);
 		//login.showErrorMsg();//如果有错误信息，显示错误信息
@@ -17,7 +16,7 @@ var login = {
 			}
 		});
 	},
-	encrypt: function (str) {
+	/*encrypt: function (str) {
 		var key = login.decrypt('23d8cac1ced85fdae0eb075df9144ed4');
 		var keyHex = CryptoJS.enc.Utf8.parse(key);
 		var encrypted = CryptoJS.DES.encrypt(str, keyHex, {
@@ -25,17 +24,18 @@ var login = {
 			padding: CryptoJS.pad.Pkcs7
 		});
 		return encrypted.ciphertext.toString();
-	},
+	},*/
 	//校验form表单
 	checkForm:function(){
 		var loginName = $("#loginName").val();
 		var passwd = $("#passwd").val();
 		var yzm = $("#yzm").val();
 		var isYzmShow = $("#yzmSpan").is(":hidden");
+		//取出cookie
 		var str = document.cookie;
 		var arr  =str.split("=");
 		//校验账号为空
-		if($.trim(loginName)==""){
+		if(loginName == ""){
 			login.hideErrorShow("loginNameFlag");//隐藏自己框下的所有提示
 			$("#loginNameErrorShow").html("请输入账号");
 			$("#loginNameErrorShow").show();//显示提示信息
@@ -43,7 +43,7 @@ var login = {
 			return false;
 		}
 		//校验密码为空
-		if($.trim(passwd)==""){
+		if(passwd == ""){
 			login.hideErrorShow("passwdFlag");//隐藏自己框下的所有提示
 			$("#passwdErrorShow").html("请输入密码");
 			$("#passwdErrorShow").show();//显示提示信息
@@ -51,7 +51,7 @@ var login = {
 			return false;
 		}
 		//校验账号为未注册账号
-		if(JSON.parse(arr[0])[0].uname!=$.trim(loginName)){
+		if(JSON.parse(arr[1])[0].uname!=loginName){
 			login.hideErrorShow("loginNameFlag");//隐藏自己框下的所有提示
 			$("#loginNameErrorShow").html("请注册账号");
 			$("#loginNameErrorShow").show();//显示提示信息
@@ -59,7 +59,7 @@ var login = {
 			return false;
 		}
 		//校验账号密码是否不正确
-		if(JSON.parse(arr[0])[0].upwd!=$.trim(passwd)){
+		if(JSON.parse(arr[1])[1].upwd!=passwd){
 			login.hideErrorShow("loginNameFlag");//隐藏自己框下的所有提示
 			$("#loginNameErrorShow").html("密码不正确");
 			$("#loginNameErrorShow").show();//显示提示信息
@@ -70,22 +70,21 @@ var login = {
 	},
 	//登录
 	doLogin:function(){
-		_tag.dcsMultiTrack('wt.s_cart','login');//BI
-		if(login.checkForm()){
-			$("#passwd").val(login.encrypt($("#passwd").val()));
-			LFControl.loading.Start();
+		if(!login.checkForm()){
+			//$("#passwd").val(login.encrypt($("#passwd").val()));
+			//LFControl.loading.Start();
 			$("#loginform").submit();
 			alert("登录成功");
 		}
 	},
-	//显示图形验证码
+	/*//显示图形验证码
 	showYZM:function(){
 		var code = $("#code").val();
 		//需要图形验证码
 		if(code=="50001"){
 			$("#yzmSpan").show();
 		}
-	},
+	},*/
 	//隐藏所有错误提示
 	hideAllErrorShow:function(){
 		$(".errorShowFlag").html("");

@@ -1,13 +1,13 @@
 register = {
 	init:function() {
 		register.bind.bindMobileFcous();//绑定手机号框fcous
+		register.bind.bindMobileBlur();
 		register.bind.bindPasswdFcous();//绑定密码框fcous
 		register.bind.bindPasswd1Fcous();//绑定再次密码框fcous
 		register.bind.bindPasswd1Blur();//绑定再次密码框Blur
 		//register.bind.bindYzmFcous();//绑定图形验证码框的fcous事件
 		register.bind.bindRegisterBtnClick();//绑定同意协议并注册click事件
 		register.bind.bindPasswdKeyUp();//绑定密码框的keyUp事件
-		//register.showYZM();//显示图形验证码
 		//绑定回车事件
 		$(document).keydown(function(event){
 			switch (event.which) {
@@ -35,7 +35,7 @@ register.bind={
 		bindMobileBlur:function(){
 			$("#mobileNo").blur(function(){
 				//校验手机格式
-				var mobileNo = $.trim($("#mobileNo").val());
+				var mobileNo = $("#mobileNo").val();
 				if(mobileNo != ""){
 					if(!register.func.isPhone(mobileNo)){
 						register.func.hideErrorShow("mobileNoFlag");//隐藏自己框下的所有提示
@@ -56,14 +56,6 @@ register.bind={
 
 			});
 		},
-		/*//绑定图形验证码框的fcous事件
-		bindYzmFcous:function(){
-			$("#yzm").focus(function(){
-				register.func.hideErrorShow("yzmFlag");//隐藏自己框下的所有提示
-				$(".successShowFlag").hide();//所有的成功提示隐藏
-
-			});
-		},*/
 		//绑定再次输入密码框的fcous事件
 		bindPasswd1Fcous:function(){
 			$("#passwd1").focus(function(){
@@ -89,12 +81,10 @@ register.bind={
 		//绑定注册按钮click事件
 		bindRegisterBtnClick:function(){
 			$("#registerBtn").bind('click',function(){
-				//_tag.dcsMultiTrack('wt.s_cart','register');//BI
-				if(register.func.checkForm()){
+				if(!register.func.checkForm()){
 					//注册
 					register.func.doRegister();
 				}
-
 			});
 		},
 		//绑定密码框keyUp事件
@@ -137,7 +127,6 @@ register.bind={
 			});
 		}
 };
-
 register.func={
 		//隐藏某个输入框下所有的的提示信息和错号对号图片
 		hideErrorShow:function(cssFlag){
@@ -160,12 +149,12 @@ register.func={
 		checkForm:function(){
 			//校验手机号为空
 			var mobileNo = $("#mobileNo").val();
-			if(mobileNo==null || $.trim(mobileNo)==""){
+			if(mobileNo==null){
 				register.func.hideErrorShow("mobileNoFlag");//隐藏自己框下的所有提示
 				$("#mobileNoErrorShow").html("请输入手机号");
 				$("#mobileNoErrorShow").show();
 				$("#mobileNoErrorPic").show();
-				return false;
+				//return false;
 			}
 			//校验手机格式
 			if(!register.func.isPhone(mobileNo)){
@@ -173,16 +162,16 @@ register.func={
 				$("#mobileNoErrorShow").html("请输入正确的手机号");
 				$("#mobileNoErrorShow").show();
 				$("#mobileNoErrorPic").show();
-				return false;
+				//return false;
 			}
 			//校验密码为空
 			var passwd = $("#passwd").val();
-			if(passwd==null || $.trim(passwd)==""){
+			if(passwd==null){
 				register.func.hideErrorShow("passwdFlag");//隐藏自己框下的所有提示
 				$("#passwdErrorShow").html("请输入密码");
 				$("#passwdErrorShow").show();
 				$("#passwdErrorPic").show();
-				return false;
+				//return false;
 			}
 			//校验密码长度小于8
 			if(passwd.length<8){
@@ -190,50 +179,47 @@ register.func={
 				$("#passwdErrorShow").html("8-20位字符，推荐字母、数字和符号组合的密码");
 				$("#passwdErrorShow").show();
 				$("#passwdErrorPic").show();
-				return false;
+				//return false;
 			}
-			//校验密码强度
+			/*//校验密码强度
 			if($("#cl1").hasClass("on")){
 				register.func.hideErrorShow("passwdFlag");//隐藏自己框下的所有提示
 				$("#passwdErrorShow").html("密码强度弱");
 				$("#passwdErrorShow").show();
 				$("#passwdErrorPic").show();
-				return false;
-			}
-			//校验确认密码为空
+				//return false;
+			}*/
+			/*//校验确认密码为空(已校验密码为空,若确认密码为空,则不相等=>得出:确认密码无需校验为空)
 			var passwd1 = $("#passwd1").val();
-			if(passwd1==null || $.trim(passwd1)==""){
+			if(passwd1==null){
 				register.func.hideErrorShow("passwd1Flag");//隐藏自己框下的所有提示
 				$("#passwd1ErrorShow").html("请输入确认密码");
 				$("#passwd1ErrorShow").show();
 				$("#passwd1ErrorPic").show();
-				return false;
-			}
+				//return false;
+			}*/
 			//校验两次密码不一致
-			var passwd = $("#passwd").val();
 			var passwd1 = $("#passwd1").val();
 			if(passwd != passwd1){
 				register.func.hideErrorShow("passwd1Flag");//隐藏自己框下的所有提示
 				$("#passwd1ErrorShow").html("两次密码不一致");
 				$("#passwd1ErrorPic").show();//显示提示信息
 				$("#passwd1ErrorShow").show();//显示提示信息
-				return false;
+				//return false;
 			}
 		},
 		//注册
 		doRegister:function(){
 			var mobileNo = $("#mobileNo").val();
 			var passwd = $("#passwd").val();
-			var ssid = $("#ssid").val();
-			var mobileYzm = $("#mobileYzm").val();
-			LFControl.loading.Start();//添加遮盖浮层
-			LFControl.loading.End();//关闭遮盖浮层
+			//LFControl.loading.Start();//添加遮盖浮层
+			//LFControl.loading.End();//关闭遮盖浮层
 			//将信息存入cookie中
 			var arr = [{"uname":mobileNo,"upwd":passwd}];
 			//将arr中的值存入到cookie中
 			document.cookie = "userlist=" + JSON.stringify( arr );
 			alert("注册成功,请登录账号");
-			window.location.href="login.html";
+			window.location.href="http://127.0.0.1/item/login.html";
 		},
 		//检验密码复杂度
 		checkLevel:function(){
