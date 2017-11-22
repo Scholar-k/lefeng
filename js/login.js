@@ -2,9 +2,9 @@ var login = {
 	//页面初始化加载页面
 	init:function() {
 		$("#formSubmit").bind('click',login.doLogin);//绑定登录按钮click
-		login.showYZM();//显示图形验证码
-		$("#yzmPic").bind('click',login.refreshYzm);//绑定刷新图形页面click
-		$("#changeYzm").bind('click',login.refreshYzm);
+		//login.showYZM();//显示图形验证码
+		//$("#yzmPic").bind('click',login.refreshYzm);//绑定刷新图形页面click
+		//$("#changeYzm").bind('click',login.refreshYzm);
 		//login.showErrorMsg();//如果有错误信息，显示错误信息
 		login.bindLoginNameFcous();//绑定账号框的fcous事件
 		login.bindPasswdFcous();//绑定密码框的fcous事件
@@ -86,10 +86,6 @@ var login = {
 			$("#yzmSpan").show();
 		}
 	},
-	//刷新验证码
-	refreshYzm:function(){
-		
-	},
 	//隐藏所有错误提示
 	hideAllErrorShow:function(){
 		$(".errorShowFlag").html("");
@@ -111,15 +107,6 @@ var login = {
 			$(".successShowFlag").hide();//所有的成功提示隐藏
 			$("#passwdSuccessShow").html("请输入密码");
 			$("#passwdSuccessShow").show();//显示提示信息
-		});
-	},
-	//绑定验证码框的fcous事件
-	bindYzmFcous:function(){
-		$("#yzm").focus(function(){
-			login.hideErrorShow("yzmFlag");//隐藏自己框下的所有提示
-			$(".successShowFlag").hide();//所有的成功提示隐藏
-			$("#yzmSuccessShow").html("请输入验证码");
-			$("#yzmSuccessShow").show();//显示提示信息
 		});
 	},
 	//隐藏某个输入框下所有的的提示信息和错号对号图片
