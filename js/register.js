@@ -7,6 +7,7 @@ register = {
 		register.bind.bindYzmFcous();//绑定图形验证码框的fcous事件
 		register.bind.bindRegisterBtnClick();//绑定同意协议并注册click事件
 		register.bind.bindPasswdKeyUp();//绑定密码框的keyUp事件
+		register.showYZM();//显示图形验证码
 		//绑定回车事件
 		$(document).keydown(function(event){
 			switch (event.which) {
@@ -19,7 +20,6 @@ register = {
 		$("#yzmPic").bind('click',register.func.refreshCaptcha);//绑定刷新图形页面click
 		$("#changeYzm").bind('click',register.func.refreshCaptcha);
 	}
-
 };
 register.bind={
 		//绑定手机号码框的fcous事件
@@ -139,15 +139,6 @@ register.bind={
 };
 
 register.func={
-		/*encrypt: function (str) {
-			var key = register.func.decrypt('23d8cac1ced85fdae0eb075df9144ed4');
-			var keyHex = CryptoJS.enc.Utf8.parse(key);
-			var encrypted = CryptoJS.DES.encrypt(str, keyHex, {
-				mode: CryptoJS.mode.ECB,
-				padding: CryptoJS.pad.Pkcs7
-			});
-			return encrypted.ciphertext.toString();
-		},*/
 		//隐藏某个输入框下所有的的提示信息和错号对号图片
 		hideErrorShow:function(cssFlag){
 			$("."+cssFlag).hide();
