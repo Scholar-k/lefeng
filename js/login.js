@@ -16,21 +16,13 @@ var login = {
 			}
 		});
 	},
-	/*encrypt: function (str) {
-		var key = login.decrypt('23d8cac1ced85fdae0eb075df9144ed4');
-		var keyHex = CryptoJS.enc.Utf8.parse(key);
-		var encrypted = CryptoJS.DES.encrypt(str, keyHex, {
-			mode: CryptoJS.mode.ECB,
-			padding: CryptoJS.pad.Pkcs7
-		});
-		return encrypted.ciphertext.toString();
-	},*/
 	//校验form表单
 	checkForm:function(){
 		var loginName = $("#loginName").val();
 		var passwd = $("#passwd").val();
 		var yzm = $("#yzm").val();
 		var isYzmShow = $("#yzmSpan").is(":hidden");
+		
 		//取出cookie
 		var str = document.cookie;
 		var arr  =str.split("=");
@@ -71,20 +63,11 @@ var login = {
 	//登录
 	doLogin:function(){
 		if(!login.checkForm()){
-			//$("#passwd").val(login.encrypt($("#passwd").val()));
 			//LFControl.loading.Start();
 			$("#loginform").submit();
 			alert("登录成功");
 		}
 	},
-	/*//显示图形验证码
-	showYZM:function(){
-		var code = $("#code").val();
-		//需要图形验证码
-		if(code=="50001"){
-			$("#yzmSpan").show();
-		}
-	},*/
 	//隐藏所有错误提示
 	hideAllErrorShow:function(){
 		$(".errorShowFlag").html("");

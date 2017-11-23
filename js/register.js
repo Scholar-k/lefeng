@@ -5,8 +5,7 @@ register = {
 		register.bind.bindPasswdFcous();//绑定密码框fcous
 		register.bind.bindPasswd1Fcous();//绑定再次密码框fcous
 		register.bind.bindPasswd1Blur();//绑定再次密码框Blur
-		//register.bind.bindYzmFcous();//绑定图形验证码框的fcous事件
-		register.bind.bindRegisterBtnClick();//绑定同意协议并注册click事件
+		register.bind.bindRegisterBtnClick();//绑定注册click事件
 		register.bind.bindPasswdKeyUp();//绑定密码框的keyUp事件
 		//绑定回车事件
 		$(document).keydown(function(event){
@@ -173,6 +172,9 @@ register.func={
 				$("#passwdErrorPic").show();
 				//return false;
 			}
+			/*校验确认密码为空(已校验密码为空,
+			若确认密码为空,则不相等=>得出:确认密码无需校验为空)
+			*/
 			//校验密码长度小于8
 			if(passwd.length<8){
 				register.func.hideErrorShow("passwdFlag");//隐藏自己框下的所有提示
@@ -181,23 +183,6 @@ register.func={
 				$("#passwdErrorPic").show();
 				//return false;
 			}
-			/*//校验密码强度
-			if($("#cl1").hasClass("on")){
-				register.func.hideErrorShow("passwdFlag");//隐藏自己框下的所有提示
-				$("#passwdErrorShow").html("密码强度弱");
-				$("#passwdErrorShow").show();
-				$("#passwdErrorPic").show();
-				//return false;
-			}*/
-			/*//校验确认密码为空(已校验密码为空,若确认密码为空,则不相等=>得出:确认密码无需校验为空)
-			var passwd1 = $("#passwd1").val();
-			if(passwd1==null){
-				register.func.hideErrorShow("passwd1Flag");//隐藏自己框下的所有提示
-				$("#passwd1ErrorShow").html("请输入确认密码");
-				$("#passwd1ErrorShow").show();
-				$("#passwd1ErrorPic").show();
-				//return false;
-			}*/
 			//校验两次密码不一致
 			var passwd1 = $("#passwd1").val();
 			if(passwd != passwd1){
@@ -212,8 +197,6 @@ register.func={
 		doRegister:function(){
 			var mobileNo = $("#mobileNo").val();
 			var passwd = $("#passwd").val();
-			//LFControl.loading.Start();//添加遮盖浮层
-			//LFControl.loading.End();//关闭遮盖浮层
 			//将信息存入cookie中
 			var arr = [{"uname":mobileNo,"upwd":passwd}];
 			//将arr中的值存入到cookie中
